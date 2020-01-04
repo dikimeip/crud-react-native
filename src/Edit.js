@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,TextInput } from 'react-native';
+import { View, Text, TextInput,TouchableOpacity } from 'react-native';
 
 class Edit extends Component {
     constructor(props) {
@@ -56,7 +56,18 @@ class Edit extends Component {
                     value={this.state.alamat}
                     onChangeText={TextInput => this.setState({ alamat: TextInput })}
                 />
-                
+                <TouchableOpacity
+                    onPress={}
+                    style={{ backgroundColor: '#61A754', padding: 20, borderRadius: 10, marginTop: 20 }}
+                >
+                    <Text style={{ fontSize: 13, fontWeight: 'bold', color: 'white', textAlign: 'center' }}>UBAH DATA</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={}
+                    style={{ backgroundColor: '#61A754', padding: 20, borderRadius: 10, marginTop: 20 }}
+                >
+                    <Text style={{ fontSize: 13, fontWeight: 'bold', color: 'white', textAlign: 'center' }}>HAPUS DATA</Text>
+                </TouchableOpacity>
             </View>
         )
     }
