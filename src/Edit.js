@@ -28,6 +28,7 @@ class Edit extends Component {
         }).then(response => response.json())
             .then(responsejson => {
                 alert(JSON.stringify(responsejson.message))
+                this.props.navigation.navigate('Tambah')
             }).catch(err => {
                 console.log(err)
             })
