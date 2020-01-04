@@ -25,13 +25,14 @@ class Tampil extends Component {
         <ListItem
             title={item.nama}
             subtitle = {item.nim}
+            rightSubtitle = {item.alamat}
         />
     )
 
     render() {
         return (
             <View>
-                <Text style={{ fontSize: 20, textAlign: 'center' }}>
+                <Text style={{ fontSize: 20, textAlign: 'center',padding:20,backgroundColor:'brown',color:'white' }}>
                     Data Siswa
                 </Text>
                 <FlatList
