@@ -20,24 +20,29 @@ class Tampil extends Component {
             })
     }
 
-    pindahHalaman = () => {
-        this.props.navigation.navigate("Edit")
+    pindahHalaman = (nama,kelas,nim,alamat) => {
+        this.props.navigation.navigate("Edit", {
+             nim: nim,
+             nama: nama,
+             kelas: kelas,
+             alamat: alamat
+        })
     }
 
     keyExtractor = (item, index) => index.toString()
     renderItem = ({ item }) => (
         <ListItem
             title={item.nama}
-            subtitle = {item.nim}
-            rightSubtitle = {item.alamat}
-            onPress = {this.pindahHalaman}
+            subtitle={item.nim}
+            rightSubtitle={item.alamat}
+            onPress={(nama,kelas,nim,alamat) => this.pindahHalaman(item.nama,item.kelas,item.nim,item.alamat) }
         />
     )
 
     render() {
         return (
             <View>
-                <Text style={{ fontSize: 20, textAlign: 'center',padding:20,backgroundColor:'brown',color:'white' }}>
+                <Text style={{ fontSize: 20, textAlign: 'center', padding: 20, backgroundColor: 'brown', color: 'white' }}>
                     Data Siswa
                 </Text>
                 <FlatList
