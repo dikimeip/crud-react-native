@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
+import { ListItem } from 'react-native-elements'
 
-class Tampil extends Component{
+class Tampil extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           mahasiswa:[]
+            mahasiswa: []
         }
     }
 
@@ -14,18 +15,30 @@ class Tampil extends Component{
             .then(response => response.json())
             .then(responseJson => {
                 this.setState({
-                    mahasiswa:responseJson.mhs
+                    mahasiswa: responseJson.mhs
                 })
             })
     }
-    
 
-    render(){
-        return(
+    keyExtractor = (item, index) => index.toString()
+    renderItem = ({ item }) => (
+        <ListItem
+            title={item.nama}
+            subtitle = {item.nim}
+        />
+    )
+
+    render() {
+        return (
             <View>
-                <Text style={{fontSize:20,textAlign:'center'}}>
+                <Text style={{ fontSize: 20, textAlign: 'center' }}>
                     Data Siswa
                 </Text>
+                <FlatList
+                    keyExtractor={this.keyExtractor}
+                    data={this.state.mahasiswa}
+                    renderItem={this.renderItem}
+                />
             </View>
         )
     }
