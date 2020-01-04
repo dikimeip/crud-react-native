@@ -17,6 +17,8 @@ class Tampil extends Component {
                 this.setState({
                     mahasiswa: responseJson.mhs
                 })
+            }).catch(err => {
+                console.log(err)
             })
     }
 
