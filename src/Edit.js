@@ -29,25 +29,34 @@ class Edit extends Component {
                     placeholder='Masukan Nim'
                     underlineColorAndroid='blue'
                     style={{ marginTop: 0, textAlign: 'center', height: 40 }}
+                    value={this.state.nim}
+                    editable={false}
                 />
                 <Text style={{ fontSize: 14, marginLeft: 20, marginTop: 20 }} >Nama Mahasiswa</Text>
                 <TextInput
                     placeholder='Masukan Nama'
                     underlineColorAndroid='blue'
                     style={{ marginTop: 20, textAlign: 'center', height: 40 }}
+                    value={this.state.nama}
+                    onChangeText={TextInput => this.setState({ nama: TextInput })}
                 />
                 <Text style={{ fontSize: 14, marginLeft: 20, marginTop: 20 }} >Kelas Mahasiswa</Text>
                 <TextInput
                     placeholder='Masukan Kelas'
                     underlineColorAndroid='blue' style={{ marginTop: 20, textAlign: 'center', height: 40 }}
                     keyboardType="numeric"
+                    value={this.state.kelas}
+                    onChangeText={TextInput => this.setState({ kelas: TextInput })}
                 />
                 <Text style={{ fontSize: 14, marginLeft: 20, marginTop: 20 }} >Alamat Mahasiswa</Text>
                 <TextInput
                     placeholder='Masukan Alamat'
                     underlineColorAndroid='blue'
                     style={{ marginTop: 20, textAlign: 'center', height: 40 }}
+                    value={this.state.alamat}
+                    onChangeText={TextInput => this.setState({ alamat: TextInput })}
                 />
+                
             </View>
         )
     }

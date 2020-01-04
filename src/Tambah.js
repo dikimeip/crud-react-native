@@ -63,6 +63,7 @@ class Tambah extends Component {
                     style={{ marginTop: 0, textAlign: 'center', height: 40 }}
                     onChangeText={TextInput => this.setState({ nim: TextInput })}
                     value={this.state.nim}
+                    autoFocus= {true}
                 />
                 <Text style={{ fontSize: 14, marginLeft: 20, marginTop: 20 }} >Nama Mahasiswa</Text>
                 <TextInput
