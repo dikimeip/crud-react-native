@@ -19,7 +19,7 @@ class Tambah extends Component {
     }
 
     showStudent = () => {
-       alert('Ok')
+       this.props.navigation.navigate("Tampil")
     }
 
     insertStudent = () => {
