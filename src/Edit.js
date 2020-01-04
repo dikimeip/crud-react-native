@@ -28,10 +28,10 @@ class Edit extends Component {
         }).then(response => response.json())
             .then(responsejson => {
                 alert(JSON.stringify(responsejson.message))
-                this.props.navigation.navigate('Tambah')
             }).catch(err => {
                 console.log(err)
             })
+        this.props.navigation.navigate('Tambah')
     }
 
     removeHandler = () => {
@@ -46,10 +46,11 @@ class Edit extends Component {
             })
         }).then(response => response.json())
             .then(responsejson => {
-                alert('Ok')
+                alert(JSON.stringify(responsejson.message))
             }).catch(err => {
                 console.log(err)
             })
+        this.props.navigation.navigate('Tambah')
     }
 
     componentDidMount = () => {
