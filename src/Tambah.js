@@ -22,6 +22,8 @@ class Tambah extends Component {
        this.props.navigation.navigate("Tampil")
     }
 
+
+
     insertStudent = () => {
         fetch("http://192.168.43.230/api_android/tambah.php",
             {
