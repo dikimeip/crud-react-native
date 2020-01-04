@@ -20,12 +20,17 @@ class Tampil extends Component {
             })
     }
 
+    pindahHalaman = () => {
+        this.props.navigation.navigate("Edit")
+    }
+
     keyExtractor = (item, index) => index.toString()
     renderItem = ({ item }) => (
         <ListItem
             title={item.nama}
             subtitle = {item.nim}
             rightSubtitle = {item.alamat}
+            onPress = {this.pindahHalaman}
         />
     )
 
